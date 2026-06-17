@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+@import './styles/home-page.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #f5f5f0;
+  color: #0d0d0d;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.block-tier-xl {
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  letter-spacing: -0.04em;
+}
+
+.block-tier-lg {
+  font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+  letter-spacing: -0.03em;
+}
+
+.block-tier-md {
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.block-tier-sm {
+  font-size: clamp(0.95rem, 3vw, 1.35rem);
+  letter-spacing: -0.01em;
+}
+
+@keyframes block-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes karaoke-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes block-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.block-word-new {
+  animation: block-word-in 0.12s ease-out;
+}
+
+.karaoke-line-enter {
+  animation: karaoke-enter 0.15s ease-out;
+}
+
+.panel-flat {
+  background: #fff;
+  border: 3px solid #0d0d0d;
+  box-shadow: 4px 4px 0 #0d0d0d;
+}
+
+.panel-flat-active {
+  background: #fff;
+  border: 3px solid #0d0d0d;
+  box-shadow: 4px 4px 0 #4361ee;
+}
+
+.panel-dark {
+  background: #0d0d0d;
+  border: 3px solid #0d0d0d;
+  color: #f5f5f0;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  border-radius: 0;
+  background: #333;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background: #fff;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+  cursor: pointer;
+}
+
+.mode-toggle {
+  display: flex;
+  border: 3px solid #0d0d0d;
+}
+
+.mode-toggle button {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.mode-toggle button + button {
+  border-left: 3px solid #0d0d0d;
+}
+
+.mode-toggle button.active {
+  color: #00ffc8;
+  background: #0d0d0d;
+}
+
+.mode-toggle button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.mode-toggle button:hover:not(.active):not(:disabled) {
+  color: #999;
+}
